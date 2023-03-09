@@ -1,32 +1,54 @@
 import { FC } from 'react';
-import { IArea } from '../types/area.interface';
+
 import './Game.css';
 
-import areaOff from '../image/area-off.png';
 import StatusGame from './StatusGame';
-import { IRemainingTime } from '../types/remainingTime.types';
+import Area from './Area';
+
+import { IArea, TSmile } from '../types';
 
 interface IGameProps {
-  areas: IArea[];
-  remainingTime: IRemainingTime;
-  handleClickArea: (index: number) => void;
+  field: IArea[];
+  smile: TSmile;
+  remainingTime: number;
+  handleClickArea: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, area: IArea) => void;
+  handleClickOnContextMenu: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    area: IArea
+  ) => void;
+  handleWhileMouseDown: () => void;
+  handleClickRefresh: () => void;
+  handleMouseDownRefresh: () => void;
 }
 
-const Game: FC<IGameProps> = ({ areas, remainingTime, handleClickArea }) => {
+const Game: FC<IGameProps> = ({
+  field,
+  smile,
+  remainingTime,
+  handleClickArea,
+  handleClickOnContextMenu,
+  handleWhileMouseDown,
+  handleClickRefresh,
+  handleMouseDownRefresh,
+}) => {
   return (
     <div className="game">
-      <StatusGame remainingTime={remainingTime} />
+      <StatusGame
+        remainingTime={remainingTime}
+        smile={smile}
+        handleClickRefresh={handleClickRefresh}
+        handleMouseDownRefresh={handleMouseDownRefresh}
+      />
       <div className="game__border"></div>
       <div className="game__areas">
-        {areas.map((area) => (
-          <button
-            key={area.indexArea}
-            type="button"
-            className="game__area"
-            onClick={() => handleClickArea(area.indexArea)}
-          >
-            {!area.isOpened && <img src={areaOff} alt="icon area off" />}
-          </button>
+        {field.map((area) => (
+          <Area
+            key={area.id}
+            area={area}
+            handleClickArea={handleClickArea}
+            handleClickOnContextMenu={handleClickOnContextMenu}
+            handleWhileMouseDown={handleWhileMouseDown}
+          />
         ))}
       </div>
     </div>

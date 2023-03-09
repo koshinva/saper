@@ -1,6 +1,8 @@
 export interface IArea {
-  indexArea: number;
-  type: 'bomb' | 'number' | 'empty';
-  value: number | null;
+  id: number;
   isOpened: boolean;
+  neighbor: number;
+  isFlagged: number;
+  isBomb: boolean;
+  isRedBomb: boolean;
 }
