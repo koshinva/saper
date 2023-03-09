@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+<h1 style="text-align: center">Игра Сапёр</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Описание проекта
 
-In the project directory, you can run:
+Pet-проект, в котором реализована основная функциональность игры "Сапёр".
 
-### `npm start`
+<img src="./src/image/readme/screen-1.png" alt="Screen 1 project" style="border-radius:16px;box-shadow: 0 0 10px 4px rgba(0,0,0,0.25);width:400px;">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*Скриншот*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Используемые технологии
 
-### `npm test`
+![HTML5](./src/image/readme/html_original_wordmark_logo_icon_146478.png) ![CSS3](./src/image/readme/css_original_wordmark_logo_icon_146576.png) ![TypeScript](./src/image/readme/typescript-logo.png) ![React](./src/image/readme/react_original_logo_icon_146374.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Функциональность
 
-### `npm run build`
+* поле 16*16 клеток
+* таймер на 40 минут после 1го хода
+* первый ход никогда не попадает на мину
+* если рядом с пустым полем есть другие поля без мин поблизости, они открываются автоматически
+* правая клавиша ставит флажок над полем, где предполагается мина
+* клик правой клавиши по флажку ставит вопросительный знак, еще клик - выделение снимается
+* клик по смайлу перезапускает игру
+* испуганный смайлик - пользователь нажал на поле, но еще не отпустил кнопку мыши
+* проигрыш - смайлик заменяется на грустный, раскрывается карта мин
+* когда пользователь открыл все поля кроме мин, смайлик надевает солнечные очки, секундомер останавливается
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="./src/image/readme/screencast.gif" alt="Screencast project" style="border-radius:16px;box-shadow: 0 0 10px 4px rgba(0,0,0,0.25);width:400px;">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*Скринкаст*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Установка
 
-### `npm run eject`
+1. Клонировать репозиторий
+`git clone https://github.com/koshinva/saper.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Установить зависимости
+`npm install`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Запустить локально на своей машине с помощью команды
+`npm run start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Перейти в браузер по ссылке  `http://localhost:3000/` 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Ссылки
 
-## Learn More
+**Демо** версия проекта доступна по **[ссылке](https://koshinva.github.io/saper/ 'https://koshinva.github.io/saper/')**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+*Задать вопрос по проекту*
+[![Telegram logo](./src/image/readme/logo_telegram_airplane_air_plane_paper_airplane_icon_143170.png)](https://t.me/imp_0593 'https://t.me/imp_0593')
